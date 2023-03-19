@@ -2,7 +2,7 @@ body {
   display: grid;
   grid-row-gap: 1ch; /* vertical padding between div */
   place-content: center;
-  background: rgb(255, 255, 255);
+  background: rgb(23, 91, 160);
   font-size: 2vw;
   text-align: center;
 }
@@ -13,12 +13,12 @@ button {
 
 #word {
   white-space: pre; /* multiple whitespace is not collapsed */
-  font-size: 4vw;
+  font-size: 5vw;
 }
 
 .letter-row {
   text-align: center;
-  margin: 0 0 5px;
+  margin: 0 0 4px;
 }
 
 .letter-button {
@@ -26,14 +26,14 @@ button {
   padding: 0.5em 1em;
   /* background: #333; */
   /* color: #fff; */
-  border: none;
+  border: style;
   font-size: 1em;
 }
 
 .letter-button:hover {
-  background: #555;
+  background: #2eff39;
 }
 
 .letter-button:active {
-  background: #111;
+  background: #3fb534;
 }

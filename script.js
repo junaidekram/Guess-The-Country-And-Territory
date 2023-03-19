@@ -11,7 +11,9 @@ let guessesLeft;
 let country;
 
 function randomCountry() {
-  // TODO: pick a random country from the COUNTRIES variable and return it
+  let pick = COUNTRIES[Math.floor(Math.random()*COUNTRIES.length)];
+  console.log(pick);
+  return pick;
 }
 
 function startGame() {
@@ -19,12 +21,11 @@ function startGame() {
 
   // Initialize the game state
   country = randomCountry();
-  // TODO: what field of country to set 'answer' to?
+  answer = country.name.common.toUpperCase();
   guess = [];
   guessesLeft = 10;
   console.log("the answer is:", answer);
   for (let i = 0; i < answer.length; i++) {
-    // TODO: how to handle letters not on our keyboard?
     if (answer[i] === " ") {
       guess.push(" ");
     } else {
@@ -32,14 +33,14 @@ function startGame() {
     }
   }
 
-  // Make sure all letter buttons are enabled
+
   enableAllButtons();
 
   updateResults();
 }
 
 function showHint() {
-  cardContainerDiv.innerHTML = ""; // clear any existing card content
+  cardContainerDiv.innerHTML = ""; 
 
   // create a div element to hold the card
   let card = document.createElement("div");
@@ -47,7 +48,7 @@ function showHint() {
   // create an image element for the flag
   let img = document.createElement("img");
   // TODO: How to read image url from country data?
-  // img.src = ???
+  img.src = country.flags.png;
   img.style.border = "thin solid grey";
   card.appendChild(img);
 
@@ -57,6 +58,11 @@ function showHint() {
   // Continent(s), population, area, capital(s), etc
   // p.innerHTML += `Continent: ...<br>`;
   // p.innerHTML += `Population: ...<br>`;
+  p.innerHTML += `Capital: ${country.capital[0]}<br>`;
+  p.innerHTML += `Population: ${country.population}<br>`;
+  p.innerHTML += `Continent: ${country.continents[0]}<br>`;
+  p.innerHTML += `Subregion: ${country.subregion}<br>`;
+  p.innerHTML += `Bordering Countries: ${country.borders}<br>`;
   card.appendChild(p);
 
   cardContainerDiv.appendChild(card); // create and add the card to the container
