@@ -60,9 +60,14 @@ function showHint() {
   // p.innerHTML += `Population: ...<br>`;
   p.innerHTML += `Capital: ${country.capital[0]}<br>`;
   p.innerHTML += `Population: ${country.population}<br>`;
+  p.innerHTML += `Size: ${country.area} km2<br>`;
+  p.innerHTML += `Lattitude/Longitude: ${country.latlng}<br>`;
   p.innerHTML += `Continent: ${country.continents[0]}<br>`;
   p.innerHTML += `Subregion: ${country.subregion}<br>`;
   p.innerHTML += `Bordering Countries: ${country.borders}<br>`;
+  p.innerHTML += `Independence: ${country.independent}<br>`;
+  p.innerHTML += `Landlocked: ${country.landlocked}<br>`;
+
   card.appendChild(p);
 
   cardContainerDiv.appendChild(card); // create and add the card to the container

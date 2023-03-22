@@ -1,39 +1,39 @@
 body {
-  display: grid;
-  grid-row-gap: 1ch; /* vertical padding between div */
-  place-content: center;
-  background: rgb(23, 91, 160);
-  font-size: 2vw;
-  text-align: center;
-}
-
-button {
-  font-size: 2vw;
-}
-
-#word {
-  white-space: pre; /* multiple whitespace is not collapsed */
-  font-size: 5vw;
-}
-
-.letter-row {
-  text-align: center;
-  margin: 0 0 4px;
-}
-
-.letter-button {
-  cursor: pointer;
-  padding: 0.5em 1em;
-  /* background: #333; */
-  /* color: #fff; */
-  border: style;
-  font-size: 1em;
-}
-
-.letter-button:hover {
-  background: #2eff39;
-}
-
-.letter-button:active {
-  background: #3fb534;
-}
+    display: grid;
+    grid-row-gap: 1ch; /* vertical padding between div */
+    place-content: center;
+    background: rgb(23, 91, 160);
+    font-size: 2vw;
+    text-align: center;
+  }
+  
+  button {
+    font-size: 2vw;
+  }
+  
+  #word {
+    white-space: pre; /* multiple whitespace is not collapsed */
+    font-size: 5vw;
+  }
+  
+  .letter-row {
+    text-align: center;
+    margin: 0 0 4px;
+  }
+  .letter-button {
+    cursor: pointer;
+    padding: 0.5em 1em;
+    /* background: #333; */
+    /* color: #fff; */
+    border: style;
+    font-size: 1em;
+  }
+  
+  .letter-button:hover {
+    background: #2eff39;
+  }
+  
+  .letter-button:active {
+    background: #3fb534;
+  }
+  
