@@ -3,12 +3,14 @@ const wordDiv = document.getElementById("word");
 const resultsDiv = document.getElementById("results");
 const dialogDiv = document.getElementById("dialog");
 const cardContainerDiv = document.getElementById("cardContainer");
-// variable COUNTRIES comes from countries-all.js
+const startDiv = document.getElementById("start")
 
 let answer;
 let guess;
 let guessesLeft;
 let country;
+let score;
+let tries;
 
 function randomCountry() {
   let pick = COUNTRIES[Math.floor(Math.random()*COUNTRIES.length)];
@@ -18,18 +20,17 @@ function randomCountry() {
 
 function startGame() {
   console.clear();
-
-  // Initialize the game state
+  
   country = randomCountry();
   answer = country.name.common.toUpperCase();
   guess = [];
   guessesLeft = 10;
   console.log("the answer is:", answer);
   for (let i = 0; i < answer.length; i++) {
-    if (answer[i] === " ") {
-      guess.push(" ");
-    } else {
+    if (answer[i] >= "A" && answer[i] <= "Z"){
       guess.push("_");
+    } else {
+      guess.push(answer[i]);
     }
   }
 
@@ -38,6 +39,8 @@ function startGame() {
 
   updateResults();
 }
+
+
 
 function showHint() {
   cardContainerDiv.innerHTML = ""; 
@@ -81,6 +84,7 @@ function updateResults() {
   // check for win and update the results div
   if (guess.join("") === answer) {
     resultsDiv.innerHTML = "You win!";
+    score ++;
     gameOver = true;
   } else if (guessesLeft > 0) {
     resultsDiv.innerHTML = "You have " + guessesLeft + " guesses left";
